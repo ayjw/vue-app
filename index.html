@@ -1,13 +1,37 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-	<title>vue app</title>
+	<title>new app</title>
 </head>
+<link rel="stylesheet" type="text/css" href="css/index.css">
 <body>
-	<div id="app">
-		{{message}}
-	</div>
-</body>
+ 	<div id="app">
+   	<div class="calculator">
+    <div class="display">
+     {{display}}
+    </div> 
+    <h1 class="brand">Vue Calculator</h1> 
+    <div class="keyboard">
+     <div class="panel-a">
+      <div class="top-buttons">
+       <button class="btn primary" @click='clear'><span>C </span></button> 
+       <button class="btn" @click="setNumber('.')"><span>.</span></button>
+      </div> 
+      <div class="numbers">
+       <button class="btn" v-for='num in Number' @click="setNumber(num)"><span>{{num}}</span></button> 
+      </div>
+     </div> 
+     <div class="panel-b">
+      <button class="btn" @click="calculate('+')"><span>+</span></button> 
+      <button class="btn" @click="calculate('-')"><span>-</span></button> 
+      <button class="btn" @click="calculate('*')"><span>*</span></button> 
+      <button class="btn" @click="calculate('/')"><span>/</span></button> 
+      <button class="btn primary"  @click="calculate(operator)"><span>=</span></button>
+     </div>
+    </div>
+   </div>
+  </div>
+</body> 
 </html>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="js/index.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
