@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>photo</title>
+</head>
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<body>
+<div id='app' style="width: 1280px;margin: 50px auto;"> 
+  <template>
+    <el-carousel :interval="40000000" type="card" height="640px">
+      <el-carousel-item v-for="item in items">
+        <img :src="item.img">
+      </el-carousel-item>
+  </el-carousel>
+</template>
+</div>
+</body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script type="text/javascript">
+  new Vue({
+      el: '#app',
+      data:{
+        items:[{
+          "img":"../images/IMG_3152.JPG"
+        },{
+          "img":"../images/IMG_3154.JPG"
+        },{
+          "img":"../images/IMG_3159.JPG"
+        },{
+          "img":"../images/IMG_3151.JPG"
+        },{
+          "img":"../images/IMG_3095.JPG"
+        }]
+      }
+    })
+</script>
+</html>

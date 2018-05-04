@@ -70,6 +70,13 @@ var app = new Vue({
       this.tot = 0;
       this.display = 0;
       this.operator = null;
+    },
+    backTab(){
+      var back = this.mark;
+          back=back.substr(0,back.length-1);
+          this.display = back;
+          this.mark = back;
+          console.log(this.mark)
     }
   }
 });

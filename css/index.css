@@ -79,14 +79,14 @@ body {
 .calculator .keyboard .panel-a .numbers {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row-reverse;
+  flex-direction: row;
   align-items: flex-end;
   align-content: flex-end;
 }
 .calculator .keyboard .panel-a .numbers .btn {
   width: 33.3%;
 }
-.calculator .keyboard .panel-a .numbers .btn:nth-child(10) {
+.calculator .keyboard .panel-a .numbers .btn:nth-child(13) {
   width: 100%;
 }
 .calculator .keyboard .panel-b {

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>拓扑图</title>
+</head>
+	<style>
+	*{padding: 0;margin: 0}
+	</style>
+<body>
+  	<canvas id="canvas" width="900" height="600"></canvas>  
+</body>
+</html>
+<script type="text/javascript" src='http://www.jtopo.com/js/jquery.js'></script>
+<script type="text/javascript" src='http://www.jtopo.com/demo/js/jtopo-min.js'></script>
+<script type="text/javascript" src='http://www.jtopo.com/demo/js/toolbar.js'></script>
+<script type="text/javascript">  
+     $(document).ready(function(){                    
+            var canvas = document.getElementById('canvas');
+            var stage = new JTopo.Stage(canvas);
+            //显示工具栏
+            showJTopoToobar(stage);
+            var scene = new JTopo.Scene();    
+            scene.background = 'http://www.jtopo.com/demo/img/bg.jpg';
+            
+            var node = new JTopo.PieChartNode();
+            node.shadow = false;
+            node.radius = 150;
+            node.colors = ["#3666B0","#2CA8E0","#77D1F6","#800080","#FFD700"];  
+            node.datas = [ 0.1, 0.2,0.3,0.3,0.1];
+            node.titles = ['语文','数学','英语','政治','地理'];
+            node.setLocation(300, 203);
+            scene.add(node);
+            stage.add(scene);
+            
+            function f(n){
+                if(n > 19) return;
+                node.datas[1] += 0.01;
+                node.datas[2] -= 0.01;
+                setTimeout(function(){
+                    f(n+1);
+                }, 100);
+            }
+            f(0);
+        });
+</script>  
